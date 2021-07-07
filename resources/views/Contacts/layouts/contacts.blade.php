@@ -10,17 +10,7 @@
 
 <div class="font-sans text-center text-5xl uppercase text-green-400 font-bold mt-5">Contacts</div>
 
-<body class="font-sans text-sm" style="background: #edf2f7;">
-    <div class="w-1/2 text-center row">
-        <div class="col form-inline">
-            Per Page: &nbsp;
-            <select class="form-control">
-                <option>10</option>
-                <option>15</option>
-                <option>20</option>
-            </select>
-        </div>
-    </div>
+<body class="font-sans text-sm relative" style="background: #edf2f7;">
     @livewire('contacts-table')
 </body>
 

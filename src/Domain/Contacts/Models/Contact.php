@@ -4,11 +4,10 @@ namespace Domain\Contacts\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
 
 class Contact extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
     /**
      * The attributes that are mass assignable.
      *
@@ -20,4 +19,13 @@ class Contact extends Model
         'cell_number',
         'dob'
     ];
+
+    protected $casts = ['dob' => 'date'];
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('name', 'like', '%'.$query.'%')
+                ->orWhere('email', 'like', '%' . $query . '%');
+    }
 }
