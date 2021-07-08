@@ -34,8 +34,8 @@ class ContactsTable extends Component
         ]);
     }
 
-    // public function paginationView()
-    // {
-    //     return 'Paginator.paginator';
-    // }
+    public function destroy($id)
+    {
+        Contact::destroy($id);
+    }
 }
