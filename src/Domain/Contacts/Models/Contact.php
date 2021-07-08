@@ -2,6 +2,7 @@
 
 namespace Domain\Contacts\Models;
 
+use Domain\Contacts\QueryBuilders\ContactQueryBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,10 +23,10 @@ class Contact extends Model
 
     protected $casts = ['dob' => 'date'];
 
-    public static function search($query)
+
+    public function newEloquentBuilder($query): ContactQueryBuilder
     {
-        return empty($query) ? static::query()
-            : static::where('name', 'like', '%'.$query.'%')
-                ->orWhere('email', 'like', '%' . $query . '%');
+        return new ContactQueryBuilder($query);
     }
+
 }

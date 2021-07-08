@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 class ContactsTable extends Component
 {
     use WithPagination;
+    
     public $perPage = 10;
     public $sortField = 'name';
     public $sortAsc = true;
@@ -27,9 +28,14 @@ class ContactsTable extends Component
     public function render()
     {
         return view('Contacts.Livewire.contacts-table', [
-            'contacts' => Contact::search($this->search)
+            'contacts' => Contact::query()->search($this->search)
                 ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                 ->paginate($this->perPage),
         ]);
     }
+
+    // public function paginationView()
+    // {
+    //     return 'Paginator.paginator';
+    // }
 }

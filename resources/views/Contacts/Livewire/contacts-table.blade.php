@@ -87,9 +87,9 @@
                     @endforeach
                 </tbody>
             </table>
-            <div class="row flex justify-center mt-10">
+            <div class="row flex justify-center mt-10 ml-5">
                 <div class="col">
-                   
+                   {{ $contacts->links() }}
                 </div>
             </div>
         </div>
