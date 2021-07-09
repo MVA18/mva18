@@ -2,13 +2,13 @@
 
 namespace Domain\Contacts\Actions;
 
-use Domain\Contacts\DataTransferObjects\CreateContactData;
+use Domain\Contacts\DataTransferObjects\ContactData;
 use Domain\Contacts\Models\Contact;
 
 class SaveContactAction
 {
     public function __invoke(
-        CreateContactData $data
+        ContactData $data
     ): Contact {
         $contact = Contact::create([
             'name' => $data->name,

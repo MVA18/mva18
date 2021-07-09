@@ -2,7 +2,7 @@
 
 namespace Tests\Factories;
 
-use Domain\Contacts\DataTransferObjects\CreateContactData;
+use Domain\Contacts\DataTransferObjects\ContactData;
 use Support\TestFactories\Factory;
 
 class CreateContactDataFactory extends Factory
@@ -12,9 +12,9 @@ class CreateContactDataFactory extends Factory
         return new self();
     }
 
-    public function create(array $extra = []): CreateContactData
+    public function create(array $extra = []): ContactData
     {
-        return new CreateContactData( $extra + [
+        return new ContactData( $extra + [
             'name' => 'test',
             'email' => 'test@test.com',
             'dob' => '1994-06-10',
