@@ -7,13 +7,13 @@ use Support\TestFactories\Factory;
 
 class ContactFactory extends Factory
 {
-    private string $name = 'test';
+    private string $name;
 
-    private string $email = 'test@test.com';
+    private string $email;
 
-    private string $dob = '1994-06-10';
+    private string $dob;
 
-    private string $cell_number = '0812901365';
+    private string $cell_number;
 
     public static function new(): ContactFactory
     {
