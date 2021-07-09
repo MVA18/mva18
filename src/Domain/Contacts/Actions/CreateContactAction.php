@@ -5,7 +5,7 @@ namespace Domain\Contacts\Actions;
 use Domain\Contacts\DataTransferObjects\CreateContactData;
 use Domain\Contacts\Models\Contact;
 
-class CreateInvoiceAction
+class CreateContactAction
 {
     private SaveContactAction $saveContactAction;
 
