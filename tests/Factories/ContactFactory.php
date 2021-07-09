@@ -24,8 +24,8 @@ class ContactFactory extends Factory
     {
         return Contact::create(
             $extra + [
-                'name' => $this->number,
-                'email' => $this->totalPrice,
+                'name' => $this->name,
+                'email' => $this->email,
                 'dob' => $this->dob,
                 'cell_number' => $this->cell_number, 
             ]
