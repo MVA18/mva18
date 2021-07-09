@@ -2,20 +2,21 @@
 
 namespace Domain\Bookings\Actions;
 
-use Domain\Bookings\DataTransferObjects\BookingData;
+use Domain\Contacts\DataTransferObjects\ContactData;
 use Domain\Contacts\Models\Contact;
 
 class UpdateContactAction
 {
-    public function __invoke(Contact $booking, BookingData $bookingData): Booking
+    public function __invoke(Contact $contact, ContactData $contactData): Contact
     {
-        $booking->fill([
-            'name' => $bookingData->name,
-            'unit_id' => $bookingData->unit->id,
-            'client_id' => $bookingData->client->id,
-            'starts_at' => $bookingData->period->getStart(),
-            'ends_at' => $bookingData->period->getEnd(),
+        $contact->fill([
+            'name' => $contactData->name,
+            'email' => $contactData->email,
+            'dob' => $contactData->dob,
+            'cell_number' => $contactData->cell_number,
         ])->save();
 
-        return $booking->refresh();
+        return $contact->refresh();
     }
+
+}
