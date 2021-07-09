@@ -14,6 +14,11 @@ class CreateContactDataFactory extends Factory
 
     public function create(array $extra = []): CreateContactData
     {
-        return new CreateContactData();
+        return new CreateContactData( $extra + [
+            'name' => 'test',
+            'email' => 'test@test.com',
+            'dob' => '1994-06-10',
+            'cell_number' => '081642752',
+        ]);
     }
 }
